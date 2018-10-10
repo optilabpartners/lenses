@@ -23,7 +23,9 @@ class Video extends Component {
     return (
       <React.Fragment>
         <video
-          onLoadedMetadata={this.handleSrcChange.bind(this)}
+          muted
+          onLoadedData={this.handleSrcChange.bind(this)}
+          // onLoadedMetadata={this.handleSrcChange.bind(this)}
           src={this.props.videoSource}
           poster="/background.jpg"
         />

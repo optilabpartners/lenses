@@ -1,34 +1,19 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --gutter-width: 1rem;
+  --outer-margin: 2rem;
+  --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
+  --half-gutter-width: calc((var(--gutter-width) * 0.5));
+  --xs-min: 30;
+  --sm-min: 48;
+  --md-min: 64;
+  --lg-min: 75;
+  --screen-xs-min: var(--xs-min) em;
+  --screen-sm-min: var(--sm-min) em;
+  --screen-md-min: var(--md-min) em;
+  --screen-lg-min: var(--lg-min) em;
+  --container-sm: calc(var(--sm-min) + var(--gutter-width));
+  --container-md: calc(var(--md-min) + var(--gutter-width));
+  --container-lg: calc(var(--lg-min) + var(--gutter-width));
 }
 
 ul.nav {
@@ -59,6 +44,7 @@ ul.nav li button {
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+  font-weight: bold;
 }
 
 ul.nav li button:hover {
@@ -68,4 +54,106 @@ ul.nav li button:hover {
 ul.nav li button:active {
   position: relative;
   top: 1px;
+}
+
+.App {
+  max-width: 1000px;
+}
+
+.App .container {
+  border: solid 15px #2b4870;
+  border-radius: 25px;
+}
+
+.container-fluid,
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid {
+  padding-right: var(--outer-margin, 2rem);
+  padding-left: var(--outer-margin, 2rem);
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: var(--gutter-compensation, -0.5rem);
+  margin-left: var(--gutter-compensation, -0.5rem);
+}
+
+.video-container,
+.text-container {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: var(--half-gutter-width, 0.5rem);
+  padding-left: var(--half-gutter-width, 0.5rem);
+  flex-basis: 100%;
+  max-width: 100%;
+
+  line-height: 1.5;
+  padding: 15px;
+}
+
+.video-container video {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  width: 400px;
+  height: 300px;
+}
+
+.nav-container {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: var(--half-gutter-width, 0.5rem);
+  padding-left: var(--half-gutter-width, 0.5rem);
+  flex-basis: 100%;
+  max-width: 100%;
+  border-top: solid 1px #2b4870;
+  background: #feffff;
+  background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 50%, #a0d8ef 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #feffff 0%,
+    #ddf1f9 50%,
+    #a0d8ef 100%
+  );
+  background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 50%, #a0d8ef 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 );
+}
+
+@media only screen and (min-width: 48em) {
+  .video-container {
+    flex-basis: 60%;
+    max-width: 60%;
+  }
+  .text-container {
+    flex-basis: 40%;
+    max-width: 40%;
+    border-left: solid 2px #2b4870;
+    background: -moz-linear-gradient(
+      left,
+      rgba(229, 229, 229, 1) 0%,
+      rgba(255, 255, 255, 0.76) 24%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      rgba(229, 229, 229, 1) 0%,
+      rgba(255, 255, 255, 0.76) 24%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(229, 229, 229, 1) 0%,
+      rgba(255, 255, 255, 0.76) 24%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#00ffffff',GradientType=1 );
+  }
 }

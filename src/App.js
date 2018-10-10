@@ -3,7 +3,7 @@ import Video from "./components/video";
 import Buttons from "./components/buttons";
 import "./App.css";
 import "./flexboxgrid.css";
-import { getVideos, getVideo } from "./services/videoService";
+import { getVideos, getVideo, getIntro } from "./services/videoService";
 
 class App extends Component {
   constructor(props) {
@@ -24,22 +24,34 @@ class App extends Component {
     videoText: null
   };
 
+  componentWillMount() {
+    const intro = getIntro();
+    this.setState({
+      videoSource: this.state.videoFolder.concat(intro.videoSource),
+      videoText: intro.videoText
+    });
+  }
+
   playbackCallback = (element, playbackDone) => {
     console.log("video done");
-    if (
-      this.state.videoSource !==
-      this.state.videoFolder.concat(this.currentVideo.videoSource)
-    ) {
-      this.setState({
-        videoSource: this.state.videoFolder.concat(
-          this.currentVideo.videoSource
-        )
-      });
+    if (this.currentVideo == null) {
+      return false;
+    } else {
+      if (
+        this.state.videoSource !==
+        this.state.videoFolder.concat(this.currentVideo.videoSource)
+      ) {
+        this.setState({
+          videoSource: this.state.videoFolder.concat(
+            this.currentVideo.videoSource
+          )
+        });
+      }
     }
   };
 
   loadVideo = (e, id) => {
-    if (this.state.videoSource === null) {
+    if (this.currentVideo === null) {
       this.currentVideo = getVideo(id);
       this.setState({
         videoSource: this.state.videoFolder.concat(
@@ -63,7 +75,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="row">
-            <div className="video-comp col-md-6">
+            <div className="video-container">
               <React.Fragment>
                 <Video
                   ref={this.videoRef}
@@ -72,7 +84,10 @@ class App extends Component {
                 />
               </React.Fragment>
             </div>
-            <div className="col-6">{this.state.videoText}</div>
+            <div
+              className="text-container"
+              dangerouslySetInnerHTML={{ __html: this.state.videoText }}
+            />
           </div>
           <Buttons action={this.loadVideo} videos={this.state.videos} />
         </div>
