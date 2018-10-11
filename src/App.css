@@ -14,6 +14,8 @@
   --container-sm: calc(var(--sm-min) + var(--gutter-width));
   --container-md: calc(var(--md-min) + var(--gutter-width));
   --container-lg: calc(var(--lg-min) + var(--gutter-width));
+  --border-radius: 6px;
+  --container-border-radius: 25px;
 }
 
 ul.nav {
@@ -35,9 +37,9 @@ ul.nav li button {
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background-color: #ffffff;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  -moz-border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  border-radius: var(--border-radius);
   border: 1px solid #dcdcdc;
   cursor: pointer;
   color: #666666;
@@ -62,7 +64,7 @@ ul.nav li button:active {
 
 .App .container {
   border: solid 15px #2b4870;
-  border-radius: 25px;
+  border-radius: var(--container-border-radius);
 }
 
 .container-fluid,
@@ -99,6 +101,10 @@ ul.nav li button:active {
   padding: 15px;
 }
 
+.video-container {
+  position: relative;
+}
+
 .video-container video {
   width: 100% !important;
   height: auto !important;
@@ -107,7 +113,19 @@ ul.nav li button:active {
   height: 300px;
 }
 
+.video-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(/background.jpg) center center no-repeat;
+  background-size: contain;
+}
+
 .nav-container {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   box-sizing: border-box;
   flex: 0 0 auto;
   padding-right: var(--half-gutter-width, 0.5rem);
@@ -156,4 +174,13 @@ ul.nav li button:active {
     );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#00ffffff',GradientType=1 );
   }
+}
+
+.text-change {
+  opacity: 0.01;
+}
+
+.text-change.text-change-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
 }

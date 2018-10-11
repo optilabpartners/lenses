@@ -4,6 +4,7 @@ import Buttons from "./components/buttons";
 import "./App.css";
 import "./flexboxgrid.css";
 import { getVideos, getVideo, getIntro } from "./services/videoService";
+import AnimateOnChange from "react-animate-on-change";
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class App extends Component {
     this.videoRef = React.createRef();
     this.loadVideo = this.loadVideo.bind(this);
     this.currentVideo = null;
+    this.textUpdate = false;
   }
 
   state = {
@@ -30,10 +32,10 @@ class App extends Component {
       videoSource: this.state.videoFolder.concat(intro.videoSource),
       videoText: intro.videoText
     });
+    this.textUpdate = true;
   }
 
   playbackCallback = (element, playbackDone) => {
-    console.log("video done");
     if (this.currentVideo == null) {
       return false;
     } else {
@@ -41,10 +43,13 @@ class App extends Component {
         this.state.videoSource !==
         this.state.videoFolder.concat(this.currentVideo.videoSource)
       ) {
+        // this.refs.overlayRef.style.display = "block";
+
         this.setState({
           videoSource: this.state.videoFolder.concat(
             this.currentVideo.videoSource
-          )
+          ),
+          videoText: this.currentVideo.text
         });
       }
     }
@@ -66,9 +71,22 @@ class App extends Component {
         ),
         videoText: this.currentVideo.text
       });
+
+      // this.textUpdate = false;
       this.currentVideo = getVideo(id);
     }
   };
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(this.state.videoText !== nextState.videoText);
+    if (this.state.videoText !== nextState.videoText) {
+      this.textUpdate = true;
+    } else {
+      this.textUpdate = false;
+    }
+
+    return true;
+  }
 
   render() {
     return (
@@ -76,18 +94,24 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="video-container">
-              <React.Fragment>
-                <Video
-                  ref={this.videoRef}
-                  videoSource={this.state.videoSource}
-                  callbackFromParent={this.playbackCallback}
-                />
-              </React.Fragment>
+              <Video
+                ref={this.videoRef}
+                videoSource={this.state.videoSource}
+                callbackFromParent={this.playbackCallback}
+              />
             </div>
-            <div
-              className="text-container"
-              dangerouslySetInnerHTML={{ __html: this.state.videoText }}
-            />
+            <div className="text-container">
+              <AnimateOnChange
+                customTag="div"
+                baseClassName="text-change"
+                animationClassName="text-change-active"
+                animate={this.textUpdate !== false}
+              >
+                <div
+                  dangerouslySetInnerHTML={{ __html: this.state.videoText }}
+                />
+              </AnimateOnChange>
+            </div>
           </div>
           <Buttons action={this.loadVideo} videos={this.state.videos} />
         </div>

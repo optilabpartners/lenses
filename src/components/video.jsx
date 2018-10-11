@@ -27,8 +27,9 @@ class Video extends Component {
           onLoadedData={this.handleSrcChange.bind(this)}
           // onLoadedMetadata={this.handleSrcChange.bind(this)}
           src={this.props.videoSource}
-          poster="/background.jpg"
+          poster="background.jpg"
         />
+        <div ref="overlayRef" className="overlay" style={{ display: "none" }} />
       </React.Fragment>
     );
   }
