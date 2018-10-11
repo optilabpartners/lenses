@@ -28,7 +28,7 @@ ul.nav {
 }
 
 ul.nav li {
-  margin: 10px;
+  margin: 5px 3px 10px;
 }
 
 ul.nav li button {
@@ -43,10 +43,11 @@ ul.nav li button {
   border: 1px solid #dcdcdc;
   cursor: pointer;
   color: #666666;
-  padding: 6px 24px;
+  padding: 6px 12px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
   font-weight: bold;
+  font-size: 1em;
 }
 
 ul.nav li button:hover {
@@ -124,6 +125,7 @@ ul.nav li button:active {
 }
 
 .nav-container {
+  padding-top: 10px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   box-sizing: border-box;
