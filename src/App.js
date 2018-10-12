@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Video from "./components/video";
 import Buttons from "./components/buttons";
 import "./App.css";
-import "./flexboxgrid.css";
 import { getVideos, getVideo, getIntro } from "./services/videoService";
 import AnimateOnChange from "react-animate-on-change";
 
@@ -29,12 +28,12 @@ class App extends Component {
 
   componentWillMount() {
     const intro = getIntro();
+    this.textUpdate = true;
     this.setState({
       videoSource: this.state.videoFolder.concat(intro.videoSource),
       videoText: intro.videoText,
       title: intro.title
     });
-    this.textUpdate = true;
   }
 
   playbackCallback = (element, playbackDone) => {

@@ -18,7 +18,7 @@
   --container-border-radius: 25px;
 }
 
-ul.nav {
+.App ul.nav {
   margin: 0;
   padding: 0;
   display: flex;
@@ -27,11 +27,11 @@ ul.nav {
   list-style: none;
 }
 
-ul.nav li {
+.App ul.nav li {
   margin: 5px 3px 10px;
 }
 
-ul.nav li button {
+.App ul.nav li button {
   display: flex;
   -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -50,11 +50,11 @@ ul.nav li button {
   font-size: 1em;
 }
 
-ul.nav li button:hover {
+.App ul.nav li button:hover {
   background-color: #f6f6f6;
 }
 
-ul.nav li button:active {
+.App ul.nav li button:active {
   position: relative;
   top: 1px;
 }
@@ -68,18 +68,18 @@ ul.nav li button:active {
   border-radius: var(--container-border-radius);
 }
 
-.container-fluid,
-.container {
+.App .container-fluid,
+.App .container {
   margin-right: auto;
   margin-left: auto;
 }
 
-.container-fluid {
+.App .container-fluid {
   padding-right: var(--outer-margin, 2rem);
   padding-left: var(--outer-margin, 2rem);
 }
 
-.row {
+.App .row {
   box-sizing: border-box;
   display: flex;
   flex: 0 1 auto;
@@ -90,8 +90,8 @@ ul.nav li button:active {
   max-height: 100%;
 }
 
-.video-container,
-.text-container {
+.App .video-container,
+.App .text-container {
   box-sizing: border-box;
   flex: 0 0 auto;
   padding-right: var(--half-gutter-width, 0.5rem);
@@ -103,11 +103,11 @@ ul.nav li button:active {
   padding: 15px;
 }
 
-.video-container {
+.App .video-container {
   position: relative;
 }
 
-.video-container video {
+.App .video-container video {
   width: 100% !important;
   height: auto !important;
   display: block;
@@ -125,7 +125,7 @@ ul.nav li button:active {
   background-size: contain;
 } */
 
-.nav-container {
+.App .nav-container {
   padding-top: 10px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -152,14 +152,14 @@ ul.nav li button:active {
 }
 
 @media only screen and (min-width: 48em) {
-  .row {
+  .App .row {
     min-height: 390px;
   }
-  .video-container {
+  .App .video-container {
     flex-basis: 60%;
     max-width: 60%;
   }
-  .text-container {
+  .App .text-container {
     flex-basis: 40%;
     max-width: 40%;
     border-left: solid 2px #2b4870;
@@ -185,21 +185,21 @@ ul.nav li button:active {
   }
 }
 
-.text-container h2 {
+.App .text-container h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.text-change {
+.App .text-change {
   opacity: 0.01;
 }
 
-.text-change.text-change-active {
+.App .text-change.text-change-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
 
-.text-change > div {
+.App .text-change > div {
   max-height: 290px;
   overflow: scroll;
 }

@@ -6,8 +6,7 @@
     "react": "^16.5.2",
     "react-animate-on-change": "^2.1.1",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4",
-    "react-transition-group": "1.x"
+    "react-scripts": "2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

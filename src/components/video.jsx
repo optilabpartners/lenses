@@ -28,7 +28,6 @@ class Video extends Component {
           src={this.props.videoSource}
           poster="background.jpg"
         />
-        <div ref="overlayRef" className="overlay" style={{ display: "none" }} />
       </React.Fragment>
     );
   }
