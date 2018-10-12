@@ -139,9 +139,10 @@ export function getVideo(id) {
 
 export function getIntro() {
   return {
+    title: "Ögats anatomi",
     videoSource: "intro.mp4",
     reverseVideoSource: "intro.mp4",
     videoText:
-      "<h3>Ögats anatomi</h3>Det mänskliga ögat består av flera olika delar och anses vara kroppens mest komplexa organ. Din synskärpa är beroende av hur dessa olika delar interagerar med varandra. Av de fem sinnena är nog synen det sinne som människan värdesätter mest. Klicka på namnet på den del av ögat i bilden till vänster som du vill ha mer information om."
+      "Det mänskliga ögat består av flera olika delar och anses vara kroppens mest komplexa organ. Din synskärpa är beroende av hur dessa olika delar interagerar med varandra. Av de fem sinnena är nog synen det sinne som människan värdesätter mest. Klicka på namnet på den del av ögat i bilden till vänster som du vill ha mer information om."
   };
 }

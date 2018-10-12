@@ -60,7 +60,7 @@ ul.nav li button:active {
 }
 
 .App {
-  max-width: 1000px;
+  max-width: 750px;
 }
 
 .App .container {
@@ -87,6 +87,7 @@ ul.nav li button:active {
   flex-wrap: wrap;
   margin-right: var(--gutter-compensation, -0.5rem);
   margin-left: var(--gutter-compensation, -0.5rem);
+  max-height: 100%;
 }
 
 .video-container,
@@ -110,11 +111,11 @@ ul.nav li button:active {
   width: 100% !important;
   height: auto !important;
   display: block;
-  width: 400px;
-  height: 300px;
+  /* width: 400px;
+  height: 360px; */
 }
 
-.video-container .overlay {
+/* .video-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -122,7 +123,7 @@ ul.nav li button:active {
   bottom: 0;
   background: url(/background.jpg) center center no-repeat;
   background-size: contain;
-}
+} */
 
 .nav-container {
   padding-top: 10px;
@@ -147,7 +148,13 @@ ul.nav li button:active {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 );
 }
 
+@media only screen and (min-width: 64em) {
+}
+
 @media only screen and (min-width: 48em) {
+  .row {
+    min-height: 390px;
+  }
   .video-container {
     flex-basis: 60%;
     max-width: 60%;
@@ -178,6 +185,11 @@ ul.nav li button:active {
   }
 }
 
+.text-container h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .text-change {
   opacity: 0.01;
 }
@@ -185,4 +197,9 @@ ul.nav li button:active {
 .text-change.text-change-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
+}
+
+.text-change > div {
+  max-height: 290px;
+  overflow: scroll;
 }

@@ -23,14 +23,16 @@ class App extends Component {
     setRewind: false,
     playbackCompleted: false,
     videoSource: null,
-    videoText: null
+    videoText: null,
+    title: null
   };
 
   componentWillMount() {
     const intro = getIntro();
     this.setState({
       videoSource: this.state.videoFolder.concat(intro.videoSource),
-      videoText: intro.videoText
+      videoText: intro.videoText,
+      title: intro.title
     });
     this.textUpdate = true;
   }
@@ -49,6 +51,7 @@ class App extends Component {
           videoSource: this.state.videoFolder.concat(
             this.currentVideo.videoSource
           ),
+          title: this.currentVideo.name,
           videoText: this.currentVideo.text
         });
       }
@@ -62,6 +65,7 @@ class App extends Component {
         videoSource: this.state.videoFolder.concat(
           this.currentVideo.videoSource
         ),
+        title: this.currentVideo.name,
         videoText: this.currentVideo.text
       });
     } else {
@@ -69,6 +73,7 @@ class App extends Component {
         videoSource: this.state.videoFolder.concat(
           this.currentVideo.reverseVideoSource
         ),
+        title: this.currentVideo.name,
         videoText: this.currentVideo.text
       });
 
@@ -89,6 +94,11 @@ class App extends Component {
   }
 
   render() {
+    const title =
+      Object.keys(this.state.currentVideo).length !== 0 &&
+      this.state.currentVideo.constructor !== Object
+        ? this.state.currentVideo.name
+        : this.state.title;
     return (
       <div className="App">
         <div className="container">
@@ -107,9 +117,10 @@ class App extends Component {
                 animationClassName="text-change-active"
                 animate={this.textUpdate !== false}
               >
-                <div
-                  dangerouslySetInnerHTML={{ __html: this.state.videoText }}
-                />
+                <h2>{title}</h2>
+                <div>
+                  <p>{this.state.videoText}</p>
+                </div>
               </AnimateOnChange>
             </div>
           </div>
