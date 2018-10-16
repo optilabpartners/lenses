@@ -73,14 +73,6 @@ const videos = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
-    name: "Synnerven",
-    text:
-      "Synnerven är den nerv som skickar signalerna från ögat till olika delar i hjärnan där bilden tolkas. Synnerven består av ca 1 000 000 nervtrådar. Synnerverna från de bägge ögonen kopplas om bakom ögonen på ett sånt sätt att allt man ser till höger i synfältet skickas till vänster hjärnhalva och vice versa.",
-    videoSource: "opticnerve.mp4",
-    reverseVideoSource: "opticnerve_r.mp4"
-  },
-  {
-    _id: "5b21ca3eeb7f6fbccd471820",
     name: "Puillen",
     text:
       "Pupillen är egentligen bara ett hål i iris. Anledningen till att den är svart är att pigmentlagret inne i ögat dämpar ljuset så att det inte studsar runt och följaktligen kommer det ut mycket lite ljus genom pupillen normalt sätt. Dock kan man på fotografier se röda ögon och det är färgen på näthinnan man ser på dessa fotografier.",
@@ -88,7 +80,7 @@ const videos = [
     reverseVideoSource: "pupil_r.mp4"
   },
   {
-    _id: "5b21ca3eeb7f6fbccd471821",
+    _id: "5b21ca3eeb7f6fbccd471820",
     name: "Iris",
     text:
       "Iris eller regnbågshinnan är den struktur i ögat som reglerar ljusinsläppet. Vid starkt ljus drar den ihop sig och i mörker ökar pupillens diameter. Vid ackommodation (närseende) är pupillen också mindre än vid samma ljusnivå vid seende på långt håll. Detta beror på att en mindre pupill ger ett större skärpedjup.",
@@ -96,7 +88,7 @@ const videos = [
     reverseVideoSource: "iris_r.mp4"
   },
   {
-    _id: "5b21ca3eeb7f6fbccd471822",
+    _id: "5b21ca3eeb7f6fbccd471821",
     name: "Kammarvätskan",
     text:
       "Kammarvätskan fyller den främre delen av ögat, i princip mellan linsen och cornea. Den produceras på baksidan av ciliarkroppen, sipprar igenom pupillen, in i främre kammaren och absorberas till slut i kammarvinkeln som är vinkeln mellan cornea och iris. Kammarvätskans funktion är, förutom att hålla ögongloben utspänd, att förse cornea och linsen med näringsämnen och syre från insidan. Främre kammaren är det utrymme som finns mellan linsen/iris och cornea. Om man får obalans mellan produktion och avflöde så att mängden kammarvätska ökar, ökat trycket i ögat. Detta är en av mekanismerna bakom sjukdomen grön starr eller glaukom.",
@@ -104,7 +96,7 @@ const videos = [
     reverseVideoSource: "aqueoushumor_r.mp4"
   },
   {
-    _id: "5b21ca3eeb7f6fbccd471823",
+    _id: "5b21ca3eeb7f6fbccd471822",
     name: "Cornea",
     text:
       "Cornea eller hornhinnan är den transparanta struktur som sitter längst fram på ögat. Det är denna som står för den allra största delen av ögats optiska brytkraft, ca 40 av 60 dioptrier. Det är mycket viktigt att cornea är helt klar det är därför det inte finns några blodkärl i den. Cornea försörjs istället med syre och näringsämnen via tårvätskan och via kammarvätskan. Detta kan orsaka problem vid överanvändande av kontaktlinser då det leder till syrebrist som i sin tur leder till att det växer in blodkärl i hornhinnan. Om blodkärlen växer för långt in mot mitten kommer det att störa sikten ut.",
@@ -112,7 +104,7 @@ const videos = [
     reverseVideoSource: "cornea_r.mp4"
   },
   {
-    _id: "5b21ca3eeb7f6fbccd471824",
+    _id: "5b21ca3eeb7f6fbccd471823",
     name: "Ciliarkroppen",
     text:
       "Ciliarkroppen innehåller ciliarmuskeln som är den muskel som kontrollerar ackommodationen. Ciliarkroppen producerar även kammarvätskan och är fästpunkt för zonulatrådarna som håller fast linsen.",
@@ -120,7 +112,7 @@ const videos = [
     reverseVideoSource: "ciliarybody_r.mp4"
   },
   {
-    _id: "5b21ca3eeb7f6fbccd471825",
+    _id: "5b21ca3eeb7f6fbccd471824",
     name: "Konjunktiva",
     text:
       "Konjunktiva är en slemhinna som sitter utanpå ögonvitan och på insidan av ögonlocken. Många av de körtlar som är inblandade i tårfilmsproduktionen sitter i konjunktiva. Vid irritation av konjunktiva, vanligen genom infektion eller allergi, syns detta genom att hinnan svullnar, blir ojämn och blodkärlen vidgar sig. Man upplevs som rödögd.",

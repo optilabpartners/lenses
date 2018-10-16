@@ -16,7 +16,7 @@ class App extends Component {
 
   state = {
     videos: getVideos(),
-    videoFolder: "/videos/",
+    videoFolder: "videos/",
     text: "Select a button",
     currentVideo: {},
     setRewind: false,
