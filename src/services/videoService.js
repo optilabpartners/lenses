@@ -73,7 +73,7 @@ const videos = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
-    name: "Puillen",
+    name: "Pupillen",
     text:
       "Pupillen är egentligen bara ett hål i iris. Anledningen till att den är svart är att pigmentlagret inne i ögat dämpar ljuset så att det inte studsar runt och följaktligen kommer det ut mycket lite ljus genom pupillen normalt sätt. Dock kan man på fotografier se röda ögon och det är färgen på näthinnan man ser på dessa fotografier.",
     videoSource: "pupil.mp4",
