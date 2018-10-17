@@ -201,5 +201,5 @@
 
 .App .text-change > div {
   max-height: 290px;
-  overflow: scroll;
+  overflow: auto;
 }
