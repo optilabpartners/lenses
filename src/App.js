@@ -79,10 +79,11 @@ class App extends Component {
       // this.textUpdate = false;
       this.currentVideo = getVideo(id);
     }
+    this.refs.videoContainer.style.height =
+      this.refs.videoContainer.offsetHeight + "px";
   };
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.state.videoText !== nextState.videoText);
     if (this.state.videoText !== nextState.videoText) {
       this.textUpdate = true;
     } else {
@@ -102,7 +103,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="row">
-            <div className="video-container">
+            <div ref="videoContainer" className="video-container">
               <Video
                 ref={this.videoRef}
                 videoSource={this.state.videoSource}
