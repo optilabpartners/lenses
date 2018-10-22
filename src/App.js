@@ -50,7 +50,7 @@ class App extends Component {
           videoSource: this.state.videoFolder.concat(
             this.currentVideo.videoSource
           ),
-          title: this.currentVideo.name,
+          title: this.currentVideo.header,
           videoText: this.currentVideo.text
         });
       }
@@ -64,7 +64,7 @@ class App extends Component {
         videoSource: this.state.videoFolder.concat(
           this.currentVideo.videoSource
         ),
-        title: this.currentVideo.name,
+        title: this.currentVideo.header,
         videoText: this.currentVideo.text
       });
     } else {
@@ -72,7 +72,7 @@ class App extends Component {
         videoSource: this.state.videoFolder.concat(
           this.currentVideo.reverseVideoSource
         ),
-        title: this.currentVideo.name,
+        title: this.currentVideo.header,
         videoText: this.currentVideo.text
       });
 

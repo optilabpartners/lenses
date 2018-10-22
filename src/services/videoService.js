@@ -156,6 +156,7 @@ export function getVideo(id) {
 export function getIntro() {
   return {
     title: "Ögats anatomi",
+    header: "Ögats anatomi",
     videoSource: "intro.mp4",
     reverseVideoSource: "intro.mp4",
     videoText:
