@@ -96,7 +96,7 @@ class App extends Component {
     const title =
       Object.keys(this.state.currentVideo).length !== 0 &&
       this.state.currentVideo.constructor !== Object
-        ? this.state.currentVideo.name
+        ? this.state.currentVideo.header
         : this.state.title;
     return (
       <div className="App">
