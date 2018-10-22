@@ -26,7 +26,6 @@ class Video extends Component {
           muted
           onLoadedData={this.handleSrcChange.bind(this)}
           src={this.props.videoSource}
-          poster="background.jpg"
         />
       </React.Fragment>
     );
